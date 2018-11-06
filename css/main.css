@@ -7,12 +7,12 @@
 @font-face {
     font-family: "font";
     src: url("../assets/font.ttf");
-    
     }
 
 body {
     height: 100vh;  
     width: 100vw;
+    
 }
  #board {
     width: 318px;
@@ -53,12 +53,29 @@ body {
     height: 30px;
     width: 20px;
  }
+
+
+/* landing page */
+
  #landing-main-container {
-    background: url("../assets/homeScreen.png") 100%;
+    background-color: transparent;
     height: 100%;
     width: 100%;
+    background: url("../assets/homeScreen.png") 100%;
  }
- .words {
-    font-family: "font";
-    font-size: 22pt;
+ 
+ #title{
+        font-family: "font";
+        font-size: 56pt;
+        padding-top: 80px;
+        color: #00538C;
+ 
  }
+
+ #card-container {
+    margin-top: 50px;
+}
+.cards {
+    margin-right:20px;
+    margin-left:20px;
+}
