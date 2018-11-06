@@ -58,5 +58,6 @@ function clearPicks() {
 function checkWin() {
     if(winCount=== 4) {
         document.getElementById('win-announce').innerHTML = 'You Win!';
+        document.getElementById('memory-restart').style.display = 'block';
     }
 }

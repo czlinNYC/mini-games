@@ -1,14 +1,17 @@
 const board = document.getElementById('hang-board');
 const guessBoard = document.getElementById('guess-board');
-let word = 'word';
-let mysteryWord = word.split('');
-let lives = 5;
+const letterBoard = document.getElementById('letter-board');
+
+let lives = 6;
 let elements;
 let winCount=0;
+let wordBank = ['telephone', 'elevator', 'printer', 'library', 'dictator', 'elephant', 'machismo'];
+let mysteryWord = wordBank[Math.floor(Math.random()*6)].split('');
 
 function createBoard(wordArray){
     for(let x = 0; x< wordArray.length; x++) {
         let newTile = document.createElement('div');
+        newTile.innerHTML = `<center>${wordArray[x]}</center>`;
         newTile.classList.add(`boardTile`);
         newTile.classList.add(`tile${wordArray[x]}`);
         newTile.dataset.letter = `${wordArray[x]}`;
@@ -17,27 +20,27 @@ function createBoard(wordArray){
 }
 createBoard(mysteryWord);
 
-board.addEventListener('click',(event)=> {
+letterBoard.addEventListener('click',(event)=> {
     let tempArray = document.getElementsByClassName(`tile${event.target.dataset.letter}`);
-    console.log(tempArray,'temp');
     if (tempArray.length > 0) {
         for(let x = 0;x < tempArray.length; x++) {
-            tempArray[x].innerHTML=`${event.target.dataset.letter}`;
+            tempArray[x].style.color='#9471A9';
             winCount++;
-            console.log(lives);
         }
-    } else {
+    } else if (event.target.dataset.letter) {
         lives-= 1;
-        console.log(lives);
+        document.getElementById('man').src = `./assets/hangman ${lives}.png`;
     }
-    event.target.innerHTML= '';
+    event.target.style.color= '#9471A9';
     event.target.dataset.letter= '';
     checkWin();
 })
 function checkWin() {
     if (lives<= 0){
-        alert('you lose');
+        document.getElementById('win-status').innerHTML = 'You Lose!';
+        document.getElementById('hangman-restart').style.display = 'block';
     } else if(winCount === mysteryWord.length) {
-        alert('you win')
+        document.getElementById('win-status').innerHTML = 'You Win!';
+        document.getElementById('hangman-restart').style.display = 'block';
     }
 }
