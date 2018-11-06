@@ -15,16 +15,95 @@ body {
     
 }
  #board {
-    width: 318px;
-    height: 318px;
+    position: absolute;
+    width: 500px;
+    height: 500px;
  }
-
- .tic-tac-box {
-     display: inline-block;
-     width: 100px;
-     height: 100px;
-     border: solid 1px black;
+ #box00 {
+    position:absolute;
+    top: 225px;
+    left: 525px;
+    z-index: 99;
  }
+ #box01 {
+    position:absolute;
+    top: 225px;
+    left: 680px;
+    z-index: 99;
+ }
+ #box02 {
+    position:absolute;
+    top: 225px;
+    left: 835px;
+    z-index: 99;
+ }
+ #box10 {
+    position:absolute;
+    top: 375px;
+    left: 525px;
+    z-index: 99;
+ }
+ #box11 {
+    position:absolute;
+    top: 375px;
+    left: 680px;
+    z-index: 99;
+ }
+ #box12 {
+    position:absolute;
+    top: 375px;
+    left: 835px;
+    z-index: 99;
+ }
+ #box20 {
+    position:absolute;
+    top: 525px;
+    left: 525px;
+    z-index: 99;
+ }
+ #box21 {
+    position:absolute;
+    top: 525px;
+    left: 680px;
+    z-index: 99;
+}
+ #box22 {
+    position:absolute;
+    top: 525px;
+    left: 835px;
+    z-index: 99;
+ }
+ #tictac-title{
+    font-family: "font";
+    font-size: 56pt;
+    padding-top: 50px;
+    color: #61AB67;
+}
+ #tic-tac-main {
+     height: 100%;
+     width: 100%;
+     background: url('../assets/tic tac toe bg.png') 100%;
+ }
+ #tictac-restart {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    display: none;
+}
+#tac-win {
+    position: absolute;
+    font-family: "font";
+    right: 250px;
+    bottom: 50px;
+    font-size: 42pt;
+    color: white;
+}
+#tictac-board {
+    position: absolute;
+    margin-top: 65px;
+    margin-left: -210px;
+}
+ /* hang man styling */
  .letter-box {
      display: inline-block;
      color: white;
@@ -59,6 +138,7 @@ body {
     position: absolute;
     top: 315px;
     left:480px;
+    display: none;
 }
 #guess-board {
     position: absolute;
