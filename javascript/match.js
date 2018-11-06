@@ -5,6 +5,7 @@ let pick1='';
 let pick2='';
 let card1='';
 let card2='';
+let pick1raw='';
 let winCount=0;
 function setBoard(deck) {
     let temp = deck;
@@ -22,38 +23,40 @@ function setBoard(deck) {
 setBoard(cards);
 
 board.addEventListener('click',(event)=>{
-    if(!pick1 && !pick2) {
-        event.target.innerHTML = event.target.dataset.card;
+    if(!pick1 && !pick2 && event.target.dataset.card) {
+        event.target.src = `./assets/card${event.target.dataset.card}.png`;
         pick1 = event.target.dataset.card;
+        pick1raw = event.target.id;
         card1= event.target
-    } else if(pick1 && !pick2) {
-        event.target.innerHTML = event.target.dataset.card;
+    } else if(pick1 && !pick2 && event.target.dataset.card && pick1raw != event.target.id) {
+        event.target.src = `./assets/card${event.target.dataset.card}.png`;
         pick2 = event.target.dataset.card;
+        pick1raw = event.target.id;
         card2= event.target
+        if (pick1 === pick2 ) {
+            winCount++;
+            card1 = '';
+            card2 = '';
+            pick1= '';
+            pick2= '';
+            pick1raw='';
+            checkWin();
+        } else {
         setTimeout(clearPicks, 2000);
+        }
     }
 })
 
 function clearPicks() {
-    if (pick1 != pick2 ) {
-    card2.innerHTML = '';
-    card1.innerHTML = '';
+    card2.src = './assets/memory game card back.png';
+    card1.src = './assets/memory game card back.png';
     pick1= '';
     pick2= '';
-    } else if (pick1 === pick2 ) {
-        winCount++;
-        card1.remove();
-        card2.remove();
-        card1 = '';
-        card2 = '';
-        pick1= '';
-        pick2= '';
-    }
-    checkWin();
+    pick1raw ='';
 }
 
 function checkWin() {
     if(winCount=== 4) {
-        alert('you win!');
+        document.getElementById('win-announce').innerHTML = 'You Win!';
     }
 }
