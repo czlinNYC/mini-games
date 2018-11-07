@@ -16,61 +16,65 @@ body {
 }
  #board {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 425px;
+    height: 431px;
+    background: url('../assets/tic tac toe board.png') 100%;
+    position: absolute;
+    margin-top: 225px;
+    margin-left: 500px;
  }
  #box00 {
     position:absolute;
-    top: 225px;
-    left: 525px;
+    top: 15px;
+    left: 15px;
     z-index: 99;
  }
  #box01 {
     position:absolute;
-    top: 225px;
-    left: 680px;
+    top: 15px;
+    left: 170px;
     z-index: 99;
  }
  #box02 {
     position:absolute;
-    top: 225px;
-    left: 835px;
+    top: 15px;
+    left: 325px;
     z-index: 99;
  }
  #box10 {
     position:absolute;
-    top: 375px;
-    left: 525px;
+    top: 175px;
+    left: 15px;
     z-index: 99;
  }
  #box11 {
     position:absolute;
-    top: 375px;
-    left: 680px;
+    top: 175px;
+    left: 170px;
     z-index: 99;
  }
  #box12 {
     position:absolute;
-    top: 375px;
-    left: 835px;
+    top: 175px;
+    left: 325px;
     z-index: 99;
  }
  #box20 {
     position:absolute;
-    top: 525px;
-    left: 525px;
+    top: 325px;
+    left: 15px;
     z-index: 99;
  }
  #box21 {
     position:absolute;
-    top: 525px;
-    left: 680px;
+    top: 325px;
+    left: 170px;
     z-index: 99;
 }
  #box22 {
     position:absolute;
-    top: 525px;
-    left: 835px;
+    top: 325px;
+    left: 325px;
     z-index: 99;
  }
  #tictac-title{

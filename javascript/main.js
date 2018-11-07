@@ -2,6 +2,7 @@
 const ticTac = document.getElementById('board');
 let playerTurn = 'X';
 let gameOver = false;
+let turnCount = 0;
 let gameBoard =[
     [0,0,0],
     [0,0,0],
@@ -14,8 +15,10 @@ ticTac.addEventListener('click',((event)=> {
     if (!event.target.dataset.played) {
         if (playerTurn === 'X' ) {
             event.target.src = './assets/tic tac toe x.png';
+            turnCount++;
         } else if (playerTurn === 'Y' ) {
             event.target.src = './assets/tic tac toe o.png';
+            turnCount++;
         }
         gameBoard[event.target.dataset.x][event.target.dataset.y]= playerTurn;
         event.target.dataset.played = 'true';
@@ -46,6 +49,9 @@ function checkWin(plyr) {
 function alertWinner() {
     if (gameOver === true) {
         document.getElementById('tac-win').innerHTML= `${playerTurn} wins!`;
+        document.getElementById('tictac-restart').style.display = 'block';
+    } else if (turnCount === 9) {
+        document.getElementById('tac-win').innerHTML= `Draw!`;
         document.getElementById('tictac-restart').style.display = 'block';
     }
 }
