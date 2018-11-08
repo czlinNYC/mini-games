@@ -364,6 +364,7 @@ border-radius: 10px 10px 10px 10px;
     font-size: 22pt;
     font-family: "font";
     color: #489CCA;
+    padding-left: 20px;
 }
 #player-two-time {
     display: flex;
@@ -382,14 +383,15 @@ border-radius: 10px 10px 10px 10px;
     font-size: 14pt;
     font-family: "font";
     color: #489CCA;
-    top: -45px;
-    left: -20px;
+    top: -25px;
+    left: 45px;
 }
 #player-two-seconds {
     flex: 1;
     font-size: 22pt;
     font-family: "font";
     color: #489CCA;
+    padding-left: 20px;
 }
 /* landing page */
 

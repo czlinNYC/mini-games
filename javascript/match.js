@@ -112,7 +112,7 @@ function checkWin() {
             item.src = './assets/memory game card back.png';
         })
         firstPick = false;
-        document.getElementById('player-one-seconds').innerHTML = playerOneScore ;
+        document.getElementById('player-one-seconds').innerHTML = playerOneScore;
         oneFinal = playerOneScore;
         winCount = 0;
         setBoard(cards2);
