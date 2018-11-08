@@ -377,8 +377,19 @@ border-radius: 10px 10px 10px 10px;
     font-family: "font";
     color: #489CCA;
 }
+#info {
+    position: absolute;
+    font-size: 14pt;
+    font-family: "font";
+    color: #489CCA;
+    top: -45px;
+    left: -20px;
+}
 #player-two-seconds {
     flex: 1;
+    font-size: 22pt;
+    font-family: "font";
+    color: #489CCA;
 }
 /* landing page */
 

@@ -29,7 +29,7 @@ ticTac.addEventListener('click',((event)=> {
         // change turns
         if(playerTurn === 'X') {
             playerTurn = 'Y';
-            document.getElementById('turn-indicator').innerHTML = 'Y moves!';
+            document.getElementById('turn-indicator').innerHTML = 'O moves!';
         } else {
             playerTurn = 'X';
             document.getElementById('turn-indicator').innerHTML = 'X moves!';
