@@ -1,7 +1,10 @@
 // declaring variables
 const board = document.getElementById('hang-board');
-const guessBoard = document.getElementById('guess-board');
+let guessBoard = document.getElementById('guess-board');
 const letterBoard = document.getElementById('letter-board');
+const secretContainer = document.getElementById('input-container');
+const enterButton = document.getElementById('enter-button');
+const selectPlayers = document.getElementById('player-card-container-hang');
 
 let lives = 6;
 let elements;
@@ -50,3 +53,35 @@ function checkWin() {
         document.getElementById('hangman-restart').style.display = 'block';
     }
 }
+
+selectPlayers.addEventListener('click',(event)=>{
+    if (event.target.dataset.players === "1") {
+        currentPlayers = 1;
+        document.getElementById('hang-player-one-card').style.color = "#9471A9";
+        document.getElementById('hang-player-two-card').style.color = "white";
+        document.getElementById('hang-player-one-card').style.backgroundColor = "white";
+        document.getElementById('hang-player-two-card').style.backgroundColor = "#9471A9";
+        secretContainer.style.display = 'none';
+    } else if (event.target.dataset.players === "2") {
+        currentPlayers = 2;
+        document.getElementById('hang-player-two-card').style.color = "#9471A9";
+        document.getElementById('hang-player-one-card').style.color = "white";
+        document.getElementById('hang-player-two-card').style.backgroundColor = "white";
+        document.getElementById('hang-player-one-card').style.backgroundColor = "#9471A9";
+        secretContainer.style.display = 'block';
+    }
+});
+
+enterButton.addEventListener('click', (event)=>{
+    guessBoard.remove();
+    guessBoard = document.createElement('div');
+    guessBoard.id = 'guess-board';
+    board.appendChild(guessBoard);
+
+    mysteryWord = document.getElementById('input-word').value;
+    createBoard(mysteryWord);
+    secretContainer.style.display = 'none';
+    winCount = 0;
+    lives = 6;
+    document.getElementById('man').src = `./assets/hangman ${lives}.png`;
+})
