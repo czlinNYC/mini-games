@@ -12,23 +12,27 @@ let gameBoard =[
 // main click function 
 ticTac.addEventListener('click',((event)=> {
     // checks if the square ahs been played if not marks the backend and front end boards
-    if (!event.target.dataset.played) {
+    if (!event.target.dataset.played && event.target.dataset.x) {
         if (playerTurn === 'X' ) {
             event.target.src = './assets/tic tac toe x.png';
             turnCount++;
-        } else if (playerTurn === 'Y' ) {
+        } else if (playerTurn === 'Y' && event.target.dataset.x) {
             event.target.src = './assets/tic tac toe o.png';
             turnCount++;
         }
-        gameBoard[event.target.dataset.x][event.target.dataset.y]= playerTurn;
-        event.target.dataset.played = 'true';
+         if (event.target.dataset.x) {
+            gameBoard[event.target.dataset.x][event.target.dataset.y]= playerTurn;
+            event.target.dataset.played = 'true';
+         }
         checkWin(playerTurn);
         alertWinner();
         // change turns
         if(playerTurn === 'X') {
             playerTurn = 'Y';
+            document.getElementById('turn-indicator').innerHTML = 'Y moves!';
         } else {
             playerTurn = 'X';
+            document.getElementById('turn-indicator').innerHTML = 'X moves!';
         }
     }
 }));

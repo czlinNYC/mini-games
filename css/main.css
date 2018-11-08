@@ -107,6 +107,12 @@ body {
     margin-top: 65px;
     margin-left: -210px;
 }
+#turn-indicator {
+    font-family: "font";
+    font-size: 16pt;
+    padding-top: 20px;
+    color: #61AB67;
+}
  /* hang man styling */
  .letter-box {
      display: inline-block;
@@ -235,6 +241,84 @@ body {
     font-family: "font";
     font-size: 42pt;
     color: white;
+}
+#turn-container {
+    position: absolute;
+    bottom: 90px;
+    left: 90px;
+    display: flex;
+    flex-direction: column;
+}
+#players-text {
+font-family: "font";
+font-size: 22pt;
+color:white;
+}
+#match-player-one-card {
+ flex: 3;
+ margin-top: 10px;
+ border: solid white 2px;
+ color: #489CCA;
+ padding-left: 12px;
+ font-size: 22pt;
+ font-family: "font";
+ border-radius: 10px 10px 10px 10px;
+ background-color: white;
+}
+.mid-card {
+    flex: 1;
+}
+#match-player-two-card {
+flex: 3;
+margin-top: 10px;
+border: solid white 2px;
+color: white;
+padding-left: 12px;
+font-size: 22pt;
+font-family: "font";
+border-radius: 10px 10px 10px 10px;
+}
+#player-card-container-match {
+    display: flex;
+    z-index: 99;
+}
+#score-container {
+    position: absolute;
+    flex-direction: column;
+    bottom: 100px;
+    left: 300px;
+    display: none;
+} 
+#player-one-time {
+    display: flex;
+    
+}
+#player-one-label {
+    flex: 2;
+    font-size: 22pt;
+    font-family: "font";
+    color: #489CCA;
+}
+#player-one-seconds {
+    flex: 1;
+    font-size: 22pt;
+    font-family: "font";
+    color: #489CCA;
+}
+#player-two-time {
+    display: flex;
+    font-size: 22pt;
+    font-family: "font";
+    color: #489CCA;
+}
+#player-two-label {
+    flex: 2;
+    font-size: 22pt;
+    font-family: "font";
+    color: #489CCA;
+}
+#player-two-seconds {
+    flex: 1;
 }
 /* landing page */
 
